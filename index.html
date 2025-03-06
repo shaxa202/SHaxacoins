@@ -88,7 +88,7 @@
     </div>
     
     <script>
-        let coins = 1000000000;
+        let coins = parseInt(localStorage.getItem("coins")) || 0;
         let autoClicker = JSON.parse(localStorage.getItem("autoClicker")) || false;
         document.getElementById('coins').innerText = coins;
 
@@ -147,7 +147,6 @@
 
         startAutoClicker();
 
-        // Отключение увеличения при двойном нажатии
         document.addEventListener("dblclick", (e) => e.preventDefault());
         let lastTouchEnd = 0;
         document.addEventListener("touchend", (e) => {
